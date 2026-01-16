@@ -11,11 +11,10 @@ jobs:
 
     echo-goodbye:
         runs-on: ubuntu-latest
-        dep
         steps:
             - name: Successfull step
               run: |
-                echo "i will Successed"
+                echo "i will successf"
                 exit 0
             - name: say goodbye
               run: echo "Goodbye"
