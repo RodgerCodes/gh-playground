@@ -1,0 +1,12 @@
+name: 03-workflow-runners
+
+on: push
+
+jobs:
+    runner-test:
+        runs-on: ubuntu-latest
+        steps:
+            - name: echo runner
+              run: |
+                echo "I am running on a github runner"
+                echo "Runner OS: $RUNNER_OS"
