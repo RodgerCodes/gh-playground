@@ -3,18 +3,18 @@ name: 03-workflow-runners
 on: push
 
 jobs:
-    runner-test:
-        runs-on: ubuntu-latest
-        steps:
-            - name: echo runner
-              run: |
-                echo "I am running on a github runner"
-                echo "Runner OS: $RUNNER_OS"
-    windows-echo:
-        runs-on: windows-latest
-        steps:
-            - name: show os
-              run: |
-                echo "I am running on a github runner"
-                echo "Runner OS: $RUNNER_OS"
-              
+  runner-test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: echo runner
+        run: |
+          echo "I am running on a github runner"
+          echo "Runner OS: $RUNNER_OS"
+  windows-echo:
+    runs-on: windows-latest
+    steps:
+      - name: show os
+        shell: bash
+        run: |
+          echo "I am running on a github runner"
+          echo "Runner OS: $RUNNER_OS"
