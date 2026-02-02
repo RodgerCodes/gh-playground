@@ -13,7 +13,7 @@ jobs:
   windows-echo:
     runs-on: windows-latest
     steps:
-      - name: show os
+      - name: show os windows
         shell: bash
         run: |
           echo "I am running on a github runner"
