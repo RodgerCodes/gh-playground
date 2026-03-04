@@ -1,6 +1,14 @@
 name: 06-Context
 
-on: workflow_dispatch
+on:
+  workflow_dispatch:
+    inputs:
+      debug:
+        type: boolean
+        default: false
+
+env:
+  MY_WORKFLOW_NAME: "workflow"
 
 jobs:
   echo-data:
@@ -12,3 +20,4 @@ jobs:
           echo "Ref: ${{ github.ref }}"
           echo "Actor: ${{ github.actor }}"
           echo "SHA: ${{ github.sha }}"
+          echo "Workflow name: ${{ env.MY_WORKFLOW_NAME }}"
