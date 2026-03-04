@@ -1,0 +1,22 @@
+name: 04-using action
+
+on: workflow_dispatch
+
+jobs:
+  build:
+    defaults:
+      run:
+        working-directory: react-app
+
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout code
+        uses: actions/checkout@v6
+      - name: Setup node
+        uses: actions/actions/setup-node@v6
+        with:
+          node-version: "24.x"
+      - name: Install deps
+        run: npm ci
+      - name: Run test
+        run: npm run test
