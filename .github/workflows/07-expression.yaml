@@ -1,0 +1,19 @@
+name: 07-Workflow-expressions
+
+on:
+  workflow_dispatch:
+    inputs:
+      debug:
+        type: boolean
+        default: false
+
+jobs:
+  echo:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Echo
+        if: ${{ inputs.debug}}
+        run: |
+          echo "Triggered by: ${{ github.event_name }}"
+          echo "Branch: ${{ github.ref }}"
+          echo "Commit Sha: ${{ github.sha }}"

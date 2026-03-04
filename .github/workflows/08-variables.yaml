@@ -1,0 +1,14 @@
+name: 08 Variables
+
+on:
+  workflow_dispatch:
+
+jobs:
+  echo:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print env Variable
+        env:
+          STEP_VAR: " i am a step var"
+        run: |
+          echo "Triggered by: ${{ env }}"
