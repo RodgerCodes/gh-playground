@@ -1,0 +1,23 @@
+name: 09-using functions
+
+on:
+  pull_request:
+
+jobs:
+  echo1:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Failing step
+        run: exit 1
+      - nmae: I will be skipped
+        if: ${{ success() }}
+        run: echo "I will prinnt if previous steps succeed"
+      - name: I willl execute
+        if: ${{ failure() }}
+        run: echo "I will execute if previous steps fail"
+      - name: I will executre
+        if: ${{ !cancelled() }}
+        run: echo "I will always print if previous as long as it is not cancelled fail"
+      - name: I will execute when cancelled
+        if: ${{ cancelled() }}
+        run: echo "I will execute when cancelled"
